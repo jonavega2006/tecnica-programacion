@@ -1,17 +1,10 @@
-# ABSTRACCIÓN: Clase base con comportamiento general
-
-class Personaje:
-    def __init__(self, nombre, fuerza, defensa):
-        self.nombre = nombre
-        self.fuerza = fuerza
-        self.defensa = defensa
+class Vehiculo:
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
 
     def describir(self):
-        print(f"Nombre: {self.nombre}")
-        print(f"Fuerza: {self.fuerza}")
-        print(f"Defensa: {self.defensa}")
+        print(f"Vehículo: {self.marca} {self.modelo}")
 
-
-# Uso de la abstracción
-goku = Personaje("Goku", 90, 50)
-goku.describir()
+    def transportar(self):
+        print(f"El vehículo {self.marca} {self.modelo} está listo para transportar.")
