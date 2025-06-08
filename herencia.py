@@ -1,24 +1,13 @@
-# HERENCIA: Reutilización de código de una clase padre
+from vehiculo import Vehiculo
 
-class Personaje:
-    def __init__(self, nombre, vida):
-        self.nombre = nombre
-        self.vida = vida
+class Auto(Vehiculo):
+    def __init__(self, marca, modelo, puertas):
+        super().__init__(marca, modelo)
+        self.puertas = puertas
 
-    def mostrar_vida(self):
-        print(f"{self.nombre} tiene {self.vida} puntos de vida")
+    def mostrar_puertas(self):
+        print(f"El auto tiene {self.puertas} puertas.")
 
-
-class Guerrero(Personaje):
-    def __init__(self, nombre, vida, espada):
-        super().__init__(nombre, vida)
-        self.espada = espada
-
-    def mostrar_arma(self):
-        print(f"{self.nombre} usa una espada de nivel {self.espada}")
-
-
-# Uso de la herencia
-aragorn = Guerrero("Aragorn", 120, 5)
-aragorn.mostrar_vida()
-aragorn.mostrar_arma()
+    # Override transportar
+    def transportar(self):
+        print(f"El auto {self.marca} {self.modelo} transporta a una familia.")
